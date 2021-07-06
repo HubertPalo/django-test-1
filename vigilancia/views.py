@@ -30,6 +30,11 @@ import os
 logger = logging.getLogger("django")
 
 @csrf_exempt
+def test(request):
+    print(request)
+    return JsonResponse({message: "test"}, status=201)
+
+@csrf_exempt
 def report_alert(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)

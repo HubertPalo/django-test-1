@@ -26,6 +26,7 @@ urlpatterns = [
     #path('camera_off/', views.turn_camera_off),
     # 3
     path('screenshot/<int:pk>/', views.take_photo),
+    path('test', views.test),
     # 4
 
 ]
