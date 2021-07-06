@@ -1,0 +1,15 @@
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'vigilancia/style.css' %}">
+
+{% if list %}
+    <ul>
+    {% for camera in list %}
+        <li><a href="/cameras/{{ camera.id }}/">{{ camera.code }}</a></li>
+        <img src="{{ camera.last_image_link }}" alt="Italian Trulli">
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cameras are available.</p>
+{% endif %}
